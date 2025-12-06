@@ -104,10 +104,7 @@ const techStack = [
     category: "Frontend",
     items: ["React.js", "Next.js", "TypeScript"],
   },
-  {
-    category: "Mobile",
-    items: ["React Native", "Expo"],
-  },
+  
   {
     category: "Styling",
     items: ["Tailwind CSS", "Sass", "CSS"],

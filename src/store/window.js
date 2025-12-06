@@ -20,7 +20,7 @@ const useWindowStore = create(
         if(!win) {
            return;
         }
-        win.isopen = false;
+        win.isOpen = false;
         win.zIndex = INITIAL_Z_INDEX - 1;
         win.data = null;
       }),
