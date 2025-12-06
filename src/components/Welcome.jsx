@@ -102,14 +102,13 @@ const renderText = (text) =>
   [...text].map((ch, i) => (
     <span
       key={i}
-      className="animated-letter"
+      className='animated-letter'
       style={{
         display: "inline-block",
         willChange: "transform, opacity",
         transformOrigin: "center center",
         userSelect: "none",
-      }}
-    >
+      }}>
       {ch === " " ? "\u00A0" : ch}
     </span>
   ));
@@ -123,7 +122,10 @@ const useRAFAnimation = (containerRef, config) => {
     }
 
     const letters = Array.from(container.querySelectorAll(".animated-letter"));
-    console.log(`[Welcome] letters found for "${container.id || container.className}":`, letters.length);
+    console.log(
+      `[Welcome] letters found for "${container.id || container.className}":`,
+      letters.length
+    );
 
     // baseline
     letters.forEach((l) => gsap.set(l, { scale: 1, force3D: true }));
@@ -151,7 +153,8 @@ const useRAFAnimation = (containerRef, config) => {
         const center = l - rect.left + w / 2;
         const dist = Math.abs(mouseX - center);
 
-        const intensity = mouseX === -9999 ? 0 : Math.exp(-(dist * dist) / config.spread);
+        const intensity =
+          mouseX === -9999 ? 0 : Math.exp(-(dist * dist) / config.spread);
         const scale = 1 + (config.maxScale - 1) * intensity;
 
         if (Math.abs(scale - (letter._lastScale || 1)) > 0.004) {
@@ -176,7 +179,9 @@ const useRAFAnimation = (containerRef, config) => {
       if (rafId) cancelAnimationFrame(rafId);
       container.removeEventListener("mousemove", onMove);
       container.removeEventListener("mouseleave", onLeave);
-      letters.forEach((l) => gsap.to(l, { scale: 1, duration: 0.2, overwrite: true }));
+      letters.forEach((l) =>
+        gsap.to(l, { scale: 1, duration: 0.2, overwrite: true })
+      );
     };
   }, [containerRef, config.spread, config.maxScale, config.duration]);
 };
@@ -193,12 +198,14 @@ const Welcome = () => {
   useRAFAnimation(subtitleRef, subtitleConfig);
 
   useEffect(() => {
-    console.log("[Welcome] mounted - move mouse over subtitle and title to test");
+    console.log(
+      "[Welcome] mounted - move mouse over subtitle and title to test"
+    );
   }, []);
 
   return (
     <section
-      id="welcome-wrapper"
+      id='welcome-wrapper'
       style={{
         position: "absolute",
         top: "50%",
@@ -209,26 +216,24 @@ const Welcome = () => {
         flexDirection: "column",
         alignItems: "center",
         color: "#E5E7EB", // text-gray-200
-      }}
-    >
+      }}>
       <p
-        id="welcome-subtitle"
+        id='welcome-subtitle'
         ref={subtitleRef}
-        className="welcome-subtitle"
+        className='welcome-subtitle'
         style={{
           fontSize: "1.75rem", // ~text-3xl
           margin: 0,
           lineHeight: 1.2,
           fontFamily: "Georama, system-ui, sans-serif",
-        }}
-      >
+        }}>
         {renderText("hey, I'm Akash! Welcome to my")}
       </p>
 
       <h1
-        id="welcome-title"
+        id='welcome-title'
         ref={titleRef}
-        className="welcome-title"
+        className='welcome-title'
         style={{
           marginTop: "1.75rem",
           fontSize: "5.5rem", // adjust to fit your design, ~text-9xl
@@ -236,13 +241,12 @@ const Welcome = () => {
           lineHeight: 0.95,
           fontFamily: "Georama, system-ui, sans-serif",
           display: "block",
-        }}
-      >
+        }}>
         {renderText("Portfolio")}
       </h1>
 
       <div
-        className="small-screen-note"
+        className='small-screen-note'
         style={{
           display: "none", // keep hidden unless you want to show on small screens
           position: "absolute",
@@ -251,8 +255,7 @@ const Welcome = () => {
           backdropFilter: "blur(6px)",
           padding: "0.5rem 0.75rem",
           borderRadius: 8,
-        }}
-      >
+        }}>
         <p style={{ margin: 0, fontSize: "0.95rem", color: "#9CA3AF" }}>
           This portfolio is designed for desktop/tablet screen only.
         </p>
