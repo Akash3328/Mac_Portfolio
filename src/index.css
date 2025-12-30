@@ -110,6 +110,11 @@ body {
       }
     }
   }
+.window {
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  transition: box-shadow 0.25s ease;
+}
 
   #window-controls {
     @apply flex gap-2;

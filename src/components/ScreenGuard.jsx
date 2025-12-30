@@ -36,7 +36,7 @@ const ScreenGuard = ({ children }) => {
             This portfolio is designed specifically for desktop and laptop
             screens.
             <br />
-            Please open it on a larger screen for the best experience.
+            <i className="text-2xl">Please open it on a larger screen for the best experience.</i>
           </p>
         </div>
       </div>
