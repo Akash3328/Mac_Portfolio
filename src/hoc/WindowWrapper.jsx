@@ -1,7 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import useWindowStore from "#store/window.js";
-import Draggable from "gsap/Draggable.js";
+import { Draggable } from "gsap/Draggable";
+gsap.registerPlugin(Draggable);
+
 
 import gsap from "gsap";
 

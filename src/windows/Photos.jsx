@@ -1,4 +1,4 @@
-import WindowWrapper from "#hoc/WindowWrapper";
+import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import WindowControls from "#components/WindowControls";
 import { gallery, photosLinks } from "#constants";
 import useWindowStore from "#store/window";

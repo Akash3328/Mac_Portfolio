@@ -1,5 +1,5 @@
 import React from "react";
-import WindowWrapper from "#hoc/WindowWrapper";
+import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import { WindowControls } from "#components";
 import { Download, Icon } from "lucide-react";
 
