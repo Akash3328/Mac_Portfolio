@@ -2,10 +2,14 @@ import Navbar from './Navbar';
 import Welcome from './Welcome';
 import Dock from './Dock';
 import WindowControls from './WindowControls';
+import Home from '#components/Home.jsx';
+
+
 
 export {
     Navbar,
     Welcome,
     Dock, 
-    WindowControls
+    WindowControls,
+    Home,
 }

@@ -53,19 +53,17 @@
 
 // export default TerminalWindow;
 
-
-
 import React from "react";
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import { techStack } from "#constants";
 import { Check, Flag } from "lucide-react"; // ✅ FIX: Import Flag
 import { WindowControls } from "#components";
+
 const Terminal = () => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="terminal" />
-      
+         <WindowControls target='terminal' />
         <h2>Tech Stack</h2>
       </div>
 
