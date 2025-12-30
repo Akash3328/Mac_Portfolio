@@ -3,6 +3,7 @@ import Welcome from './Welcome';
 import Dock from './Dock';
 import WindowControls from './WindowControls';
 import Home from '#components/Home.jsx';
+import ScreenGuard from '#components/ScreenGuard.jsx';
 
 
 
@@ -12,4 +13,5 @@ export {
     Dock, 
     WindowControls,
     Home,
+    ScreenGuard
 }
